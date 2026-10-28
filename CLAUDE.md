@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 App iOS en SwiftUI recién creada desde la plantilla de Xcode 26.5: solo existe `guide_iosApp` (punto de entrada `@main`) que muestra `ContentView`. No hay target de tests, dependencias SPM, linter ni formateador configurados todavía.
 
-- Target único: `guide-ios` (iPhone + iPad), bundle id `irritec.guide-ios`, deployment target iOS 18.0 (las APIs más nuevas requieren `if #available`).
+- Target único: `guide-ios` (solo iPhone), bundle id `com.irritec.guide`, nombre visible "Irritec Guias", deployment target iOS 18.0 (las APIs más nuevas requieren `if #available`).
 - Firma automática con el team `YT74GHW9X5`.
 
 ## Comandos
@@ -35,7 +35,7 @@ El scheme `guide-ios` es autogenerado (no está compartido en `xcshareddata`). N
 
 ## Producto y distribución
 
-App interna de seguimiento de envíos para empleados: login con cuentas del backend existente, consulta de envíos y subida de imágenes (cámara y galería) a la API. Distribución prevista: Unlisted App en App Store Connect (pendiente de confirmar).
+App interna de seguimiento de envíos para empleados: login con cuentas del backend existente, consulta de envíos y subida de imágenes (cámara y galería) a la API. Se distribuye como Unlisted App en App Store Connect (oculta en búsquedas, se instala por enlace).
 
 - Para la galería usar `PhotosPicker`, que no requiere `NSPhotoLibraryUsageDescription`; si se añade otro acceso a fotos, hay que añadir esa clave.
 - App Review necesita una cuenta demo que funcione contra el backend.
