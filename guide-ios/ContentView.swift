@@ -7,18 +7,24 @@
 
 import SwiftUI
 
+/// Raíz de la app: login o lista de guías según el estado de la sesión.
 struct ContentView: View {
+    @Environment(SessionStore.self) private var session
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        switch session.estado {
+        case .cargando:
+            ProgressView()
+                .task { await session.restaurar() }
+        case .sinSesion:
+            LoginView()
+        case .activa:
+            GuiasListView()
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environment(SessionStore())
 }

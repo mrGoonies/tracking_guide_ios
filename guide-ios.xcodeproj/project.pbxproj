@@ -86,10 +86,10 @@
 				};
 			};
 			buildConfigurationList = 05B7F787302CC7840054C290 /* Build configuration list for PBXProject "guide-ios" */;
-			developmentRegion = en;
+			developmentRegion = es;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				es,
 				Base,
 			);
 			mainGroup = 05B7F783302CC7840054C290;
